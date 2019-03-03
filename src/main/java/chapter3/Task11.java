@@ -7,6 +7,7 @@ public class Task11 {
     public static void main(String[] args) {
         if(args.length < 2) {
             System.out.println("Two parameters must be given");
+            return;
         }
 
         String dirPath = args[0];
@@ -16,6 +17,7 @@ public class Task11 {
 
         if(!directoryFile.isDirectory()) {
             System.out.println("Given file is not an directory");
+            return;
         }
 
         String fullExtension = "." + extension;

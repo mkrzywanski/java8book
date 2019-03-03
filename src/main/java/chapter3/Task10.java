@@ -8,6 +8,7 @@ public class Task10 {
     public static void main(String[] args) {
         if(args.length < 1) {
             System.out.println("Please supply directory path");
+            return;
         }
 
         String dirPath = args[0];
@@ -16,6 +17,7 @@ public class Task10 {
 
         if(!directoryFile.isDirectory()) {
             System.out.println("Given file is not an directory");
+            return;
         }
 
         //File[] directoriesInGivenDirectory = file.listFiles(File::isDirectory);
