@@ -11,7 +11,7 @@ public class Task14 {
 
     public static void main(String[] args) {
         logger.setUseParentHandlers(false);
-        
+
         ConsoleHandler consoleHandler = new ConsoleHandler();
 
         consoleHandler.setFormatter(new HtmlFormatter());
