@@ -13,6 +13,8 @@ public class Task15 {
 
         AtomicInteger atomicInteger = new AtomicInteger(1);
 
+        long startTime = System.currentTimeMillis();
+
         Stream.iterate(INITIAL_VALUE , bigInteger -> bigInteger.add(ONE))
                 .parallel()
                 .limit(100000)
@@ -20,5 +22,8 @@ public class Task15 {
                 .limit(500)
                 .forEach(bigInteger -> System.out.println("Number " + atomicInteger.getAndIncrement() + " " + bigInteger));
 
+        long time = System.currentTimeMillis() - startTime;
+
+        System.out.println("Time " + time + " ms");
     }
 }

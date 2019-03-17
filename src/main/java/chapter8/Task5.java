@@ -10,6 +10,7 @@ public class Task5 {
     private static final String WORD = "some";
 
     public static void main(String[] args) {
+
         IntStream intStream = letters("some");
 
         intStream.forEach(i -> System.out.println((char) i));
@@ -19,6 +20,7 @@ public class Task5 {
         Map<Integer, Character> indexToLetter = letters2(WORD);
 
         indexToLetter.forEach((index, character) -> System.out.println("Index " + index + " character " + character));
+
     }
 
     private static IntStream letters(String word) {
@@ -26,6 +28,7 @@ public class Task5 {
     }
 
     private static Map<Integer, Character> letters2(String word) {
+
         Map<Integer, Character> map = new HashMap<>();
 
         IntStream.iterate(0 , i -> i += 1)
@@ -33,6 +36,7 @@ public class Task5 {
                 .forEach(i -> map.put(i, word.charAt(i)));
 
         return map;
+
     }
 
 }

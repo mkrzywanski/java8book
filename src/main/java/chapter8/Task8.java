@@ -24,11 +24,11 @@ public class Task8 {
 
         List<String> words = Lists.newArrayList("some", "EVACUATION", "REMUNERATION", "REGULATION");
 
-        getWordsWithAtleastVowels(words, 5).forEach(System.out::println);
+        getWordsWithAtLeastNVowels(words, 5).forEach(System.out::println);
 
     }
 
-    private static List<String> getWordsWithAtleastVowels(List<String> words, int vowelsNumber) {
+    private static List<String> getWordsWithAtLeastNVowels(List<String> words, int n) {
 
         return words.stream()
                 .filter(word -> {
@@ -39,7 +39,7 @@ public class Task8 {
                             atomicInteger.incrementAndGet();
                         }
                     });
-            return atomicInteger.get() >= vowelsNumber;
+            return atomicInteger.get() >= n;
         }).collect(Collectors.toList());
 
     }
